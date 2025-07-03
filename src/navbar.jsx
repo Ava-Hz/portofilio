@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "./assets/logo.png";
 import Social from "./Social";
+import { Link } from "react-scroll";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
@@ -13,10 +14,35 @@ const Navbar = () => {
       </div>
       {/* Start Main menu */}
       <ul className="hidden md:flex">
-        <li className="px-4 cursor-pointer">Home</li>
-        <li className="px-4 cursor-pointer">About</li>
-        <li className="px-4 cursor-pointer">Skills</li>
-        <li className="px-4 cursor-pointer">Contacts</li>
+        <li className="px-4 cursor-pointer">
+          <Link to="Home" duration={500} smooth={true}>
+            Home
+          </Link>
+        </li>
+        <li className="px-4 cursor-pointer">
+          {" "}
+          <Link to="About" duration={500} smooth={true}>
+            About
+          </Link>
+        </li>
+        <li className="px-4 cursor-pointer">
+          {" "}
+          <Link to="Skills" duration={500} smooth={true}>
+            Skills
+          </Link>
+        </li>
+        <li className="px-4 cursor-pointer">
+          {" "}
+          <Link to="Work" duration={500} smooth={true}>
+            Work
+          </Link>
+        </li>
+        <li className="px-4 cursor-pointer">
+          {" "}
+          <Link to="Contact" duration={500} smooth={true}>
+            Contact
+          </Link>
+        </li>
       </ul>
 
       {/* Hamburger menu */}
@@ -33,10 +59,40 @@ const Navbar = () => {
         }
       >
         <ul>
-          <li className="py-6 text-4xl">Home</li>
-          <li className="py-6 text-4xl">About</li>
-          <li className="py-6 text-4xl">Skills</li>
-          <li className="py-6 text-4xl">Contacts</li>
+          <li className="py-6 text-4xl cursor-pointer">
+            {" "}
+            <Link onClick={handleClick} to="Home" duration={500} smooth={true}>
+              Home
+            </Link>
+          </li>
+          <li className="py-6 text-4xl cursor-pointer">
+            {" "}
+            <Link onClick={handleClick} to="About" duration={500} smooth={true}>
+              About
+            </Link>
+          </li>
+          <li className="py-6 text-4xl cursor-pointer">
+            {" "}
+            <Link
+              onClick={handleClick}
+              to="Skills"
+              duration={500}
+              smooth={true}
+            >
+              Skills
+            </Link>
+          </li>
+          <li className="py-6 text-4xl cursor-pointer">
+            {" "}
+            <Link
+              onClick={handleClick}
+              to="Contact"
+              duration={500}
+              smooth={true}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
       {/* Social Component */}
